@@ -1,5 +1,8 @@
 public class PalindromeCheckerApp {
+
+
     public static void main(String[] args) {
+ UC3
         String input = "madan";
         String reversed = "";
 
