@@ -1,5 +1,9 @@
 public class PalindromeCheckerApp {
+
+
     public static void main(String[] args) {
+ UC4
+
 
                 String input = "radar";
                 char[] chars = input.toCharArray();
