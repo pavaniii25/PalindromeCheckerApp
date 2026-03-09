@@ -1,28 +1,40 @@
+import java.util.ArrayDeque;
+import java.util.Deque;
+
 public class PalindromeCheckerApp {
 
 
     public static void main(String[] args) {
 
 
-        Stack<Character> stack = new Stack<>();
 
-        for (char c : input.toCharArray()) {
-            stack.push(c);
-        }
+                // Define the input string
+                String input = "refer";
 
-        boolean isPalindrome = true;
+                // Create a Deque to store characters
+                Deque<Character> deque = new ArrayDeque<>();
 
-        for (char c : input.toCharArray()) {
-            if (c != stack.pop()) {
-                isPalindrome = false;
-                break;
-            }
-        }
+                // Add each character to the deque
+                for (char c : input.toCharArray()) {
+                    deque.addLast(c);
+                }
 
-        System.out.println("Input : " + input);
-        System.out.println("Is Palindrome? : " + isPalindrome);
+                // Flag to track palindrome result
+                boolean isPalindrome = true;
+
+                // Continue comparison while more than one element exists
+                while (deque.size() > 1) {
+                    char first = deque.removeFirst();
+                    char last = deque.removeLast();
+
+                    if (first != last) {
+                        isPalindrome = false;
+                        break;
+                    }
+                }
+
+
     }
 }
-
 
 
