@@ -1,7 +1,7 @@
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Scanner;
-import java.util.Stack;
+ UC7
+import java.util.ArrayDeque;
+import java.util.Deque;
+
 
 public class PalindromeCheckerApp {
 
@@ -10,46 +10,36 @@ public class PalindromeCheckerApp {
 
 import java.util. *;
 
-        class UseCase6PalindromeCheckerApp {
+ UC7
 
-            public static void main(String[] args) {
+                // Define the input string
+                String input = "refer";
 
-                Scanner sc = new Scanner(System.in);
-                System.out.print("Enter a string: ");
-                String input = sc.nextLine();
+                // Create a Deque to store characters
+                Deque<Character> deque = new ArrayDeque<>();
 
-                Queue<Character> queue = new LinkedList<>();
-                Stack<Character> stack = new Stack<>();
-
-                // Insert characters into queue and stack
-                for (int i = 0; i < input.length(); i++) {
-                    char ch = input.charAt(i);
-                    queue.add(ch);
-                    stack.push(ch);
+                // Add each character to the deque
+                for (char c : input.toCharArray()) {
+                    deque.addLast(c);
                 }
 
+                // Flag to track palindrome result
                 boolean isPalindrome = true;
 
-                // Compare queue and stack characters
-                while (!queue.isEmpty() && !stack.isEmpty()) {
-                    if (queue.remove() != stack.pop()) {
+                // Continue comparison while more than one element exists
+                while (deque.size() > 1) {
+                    char first = deque.removeFirst();
+                    char last = deque.removeLast();
+
+                    if (first != last) {
                         isPalindrome = false;
                         break;
                     }
                 }
 
-                if (isPalindrome) {
-                    System.out.println("the string is a palindrome:");
-                } else {
-                    System.out.println("the string is not a palindrome:");
 
-                    sc.close();
-                }
-            }
 
-        }
     }
 }
-
 
 
