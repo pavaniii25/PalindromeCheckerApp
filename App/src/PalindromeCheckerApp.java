@@ -1,3 +1,4 @@
+
 import java.util.Scanner;
 
 public class PalindromeCheckerApp {
@@ -42,7 +43,3 @@ class PalindromeService {
         return true;
     }
 }
-    }
-
-
-
