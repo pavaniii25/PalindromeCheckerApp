@@ -1,4 +1,6 @@
+
 import java.util.Scanner;
+
 
 public class PalindromeCheckerApp {
 
@@ -28,8 +30,6 @@ public class PalindromeCheckerApp {
             return false;
         }
         return isPalindrome(str, start + 1, end - 1);
-    }
-}
 
-
-
+            }
+        }
