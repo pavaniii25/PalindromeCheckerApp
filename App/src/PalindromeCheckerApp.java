@@ -1,4 +1,5 @@
 
+import java.util.Scanner;
 
 
 public class PalindromeCheckerApp {
@@ -7,31 +8,28 @@ public class PalindromeCheckerApp {
     public static void main(String[] args) {
 
 
-        // Define the input string
-        String input = "level";
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Input string: ");
+        String str = sc.nextLine();
 
-        // Create a LinkedList to store characters
-        LinkedList<Character> list = new LinkedList<>();
+        boolean result = isPalindrome(str, 0, str.length() - 1);
 
-        // Add each character to the linked list
-        for (char c : input.toCharArray()) {
-            list.add(c);
+        System.out.println("Is Palindrome: " + result);
+
+        sc.close();
+    }
+
+    // Recursive function
+    private static boolean isPalindrome(String str, int start, int end) {
+
+        if (start >= end) {
+            return true;
         }
 
-        // Flag to track palindrome state
-        boolean isPalindrome = true;
+        if (str.charAt(start) != str.charAt(end)) {
+            return false;
+        }
+        return isPalindrome(str, start + 1, end - 1);
 
-        // Compare until only one or zero elements remain
-        while (list.size() > 1) {
-            char first = list.removeFirst();
-            char last = list.removeLast();
-
-
-            if (first != last) {
-                isPalindrome = false;
-                break;
             }
         }
-
-    }
-}
