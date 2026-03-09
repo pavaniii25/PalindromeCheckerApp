@@ -1,4 +1,5 @@
-import java.util.LinkedList;
+
+
 
 public class PalindromeCheckerApp {
 
@@ -25,10 +26,12 @@ public class PalindromeCheckerApp {
             char first = list.removeFirst();
             char last = list.removeLast();
 
+
             if (first != last) {
                 isPalindrome = false;
                 break;
             }
         }
+
     }
 }
