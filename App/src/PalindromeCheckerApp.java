@@ -1,10 +1,7 @@
 
-
 import java.util.Scanner;
 
-
 public class PalindromeCheckerApp {
-
 
     public static void main(String[] args) {
 
@@ -34,13 +31,24 @@ class StackStrategy implements PalindromeStrategy {
     public boolean check(String input) {
 
 
+// Strategy Interface
+interface PalindromeStrategy {
+    boolean check(String input);
+}
+
+// Stack-based implementation
+class StackStrategy implements PalindromeStrategy {
+
+    public boolean check(String input) {
+
+        Stack<Character> stack = new Stack<>();
+ 
 
         // Push characters to stack
         for (char c : input.toCharArray()) {
             stack.push(c);
         }
 
-        // Compare by popping
         for (char c : input.toCharArray()) {
             if (c != stack.pop()) {
                 return false;
@@ -49,5 +57,3 @@ class StackStrategy implements PalindromeStrategy {
 
         return true;
 
-    }
-}
