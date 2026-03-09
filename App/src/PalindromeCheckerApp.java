@@ -1,6 +1,4 @@
- UC7
-import java.util.ArrayDeque;
-import java.util.Deque;
+
 
 
 public class PalindromeCheckerApp {
@@ -8,38 +6,32 @@ public class PalindromeCheckerApp {
 
     public static void main(String[] args) {
 
-import java.util. *;
 
- UC7
+        // Define the input string
+        String input = "level";
 
-                // Define the input string
-                String input = "refer";
+        // Create a LinkedList to store characters
+        LinkedList<Character> list = new LinkedList<>();
 
-                // Create a Deque to store characters
-                Deque<Character> deque = new ArrayDeque<>();
+        // Add each character to the linked list
+        for (char c : input.toCharArray()) {
+            list.add(c);
+        }
 
-                // Add each character to the deque
-                for (char c : input.toCharArray()) {
-                    deque.addLast(c);
-                }
+        // Flag to track palindrome state
+        boolean isPalindrome = true;
 
-                // Flag to track palindrome result
-                boolean isPalindrome = true;
-
-                // Continue comparison while more than one element exists
-                while (deque.size() > 1) {
-                    char first = deque.removeFirst();
-                    char last = deque.removeLast();
-
-                    if (first != last) {
-                        isPalindrome = false;
-                        break;
-                    }
-                }
+        // Compare until only one or zero elements remain
+        while (list.size() > 1) {
+            char first = list.removeFirst();
+            char last = list.removeLast();
 
 
+            if (first != last) {
+                isPalindrome = false;
+                break;
+            }
+        }
 
     }
 }
-
-
