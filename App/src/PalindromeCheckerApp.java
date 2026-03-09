@@ -1,4 +1,6 @@
+
 import java.util.Scanner;
+
 
 public class PalindromeCheckerApp {
 
@@ -9,7 +11,7 @@ public class PalindromeCheckerApp {
         System.out.print("Input: ");
         String input = sc.nextLine();
 
-        // Normalize the string (remove spaces & punctuation, make lowercase)
+        
         String normalized = input.toLowerCase().replaceAll("[^a-z0-9]", "");
 
         boolean isPalindrome = true;
@@ -27,12 +29,6 @@ public class PalindromeCheckerApp {
         }
 
         System.out.println("Is Palindrome:" + isPalindrome);
+      
     }
 }
-
-
-
-
-
-
-
