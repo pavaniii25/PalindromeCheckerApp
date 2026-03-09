@@ -1,12 +1,16 @@
+ UC7
 import java.util.ArrayDeque;
 import java.util.Deque;
+
 
 public class PalindromeCheckerApp {
 
 
     public static void main(String[] args) {
 
+import java.util. *;
 
+ UC7
 
                 // Define the input string
                 String input = "refer";
@@ -32,6 +36,7 @@ public class PalindromeCheckerApp {
                         break;
                     }
                 }
+
 
 
     }
