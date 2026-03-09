@@ -1,28 +1,48 @@
+import java.util.Scanner;
+
 public class PalindromeCheckerApp {
 
 
     public static void main(String[] args) {
 
 
-        Stack<Character> stack = new Stack<>();
 
-        for (char c : input.toCharArray()) {
-            stack.push(c);
-        }
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+        String input = sc.nextLine();
 
-        boolean isPalindrome = true;
+        PalindromeService service = new PalindromeService();
 
-        for (char c : input.toCharArray()) {
-            if (c != stack.pop()) {
-                isPalindrome = false;
-                break;
-            }
-        }
+        boolean result = service.checkPalindrome(input);
 
-        System.out.println("Input : " + input);
-        System.out.println("Is Palindrome? : " + isPalindrome);
+        System.out.println("Is Palindrome: " + result);
+
+        sc.close();
     }
 }
+
+// Service class containing palindrome logic
+class PalindromeService {
+
+    public boolean checkPalindrome(String input) {
+
+        String normalized = input.toLowerCase().replaceAll("[^a-z0-9]", "");
+
+        int start = 0;
+        int end = normalized.length() - 1;
+
+        while (start < end) {
+            if (normalized.charAt(start) != normalized.charAt(end)) {
+                return false;
+            }
+            start++;
+            end--;
+        }
+
+        return true;
+    }
+}
+    }
 
 
 
